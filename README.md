@@ -128,6 +128,71 @@ yarn build
 
 There isnt really much of a roadmap for this project. It is meant as a simple example to get started with the AutoGen AgentChat API. For a more complete example, take a look at the [AutoGen Studio](https://github.com/microsoft/autogen/tree/main/python/packages/autogen-studio) project.
 
+
+## FAQ
+
+### What is AutoGen UI?
+
+AutoGen UI is a Web UI for AutoGen AgentChat API - a framework for multi-agent LLM applications. It provides a simple chat interface to interact with predefined agent teams, streaming results to the client UI.
+
+### Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **Web UI Interface** | Next.js frontend with real-time chat streaming |
+| **FastAPI Backend** | `/generate` endpoint for agent team tasks |
+| **Agent Team Config** | JSON-based agent team specification |
+| **AutoGen AgentChat** | Based on new AutoGen 0.4x AgentChat API |
+| **Hot Reload** | Development mode with backend/frontend reload |
+
+### Installation
+
+```bash
+# Install from PyPI
+pip install autogenui
+
+# Or install from source
+git clone git@github.com:victordibia/autogen-ui.git
+cd autogenui
+pip install -e .
+```
+
+### Requirements
+
+- Python 3.9+
+- OPENAI_API_KEY environment variable
+- Node.js (for frontend development)
+
+### How to Run
+
+```bash
+# Set API key
+export OPENAI_API_KEY=<your_key>
+
+# Run UI server
+autogenui  # or with --port 8081
+
+# Open http://localhost:8081
+```
+
+### Architecture
+
+| Component | Description |
+|-----------|-------------|
+| **autogenui.manager** | Runs prompts with predefined agent teams |
+| **autogenui.web.app.py** | FastAPI backend with `/generate` endpoint |
+| **frontend** | Next.js frontend chat interface |
+
+### License
+
+MIT License - Copyright (c) 2023 Victor Dibia
+
+### Help Resources
+
+- [AutoGen Studio](https://github.com/microsoft/autogen/tree/main/python/packages/autogen-studio) - More complete example
+- [AutoGen Documentation](https://microsoft.github.io/autogen/dev/user-guide/agentchat-user-guide/quickstart.html)
+- [Issues](https://github.com/victordibia/autogen-ui/issues)
+
 ## References
 
 - [AutoGen Studio](https://arxiv.org/abs/2308.08155).
